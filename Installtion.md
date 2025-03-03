@@ -47,7 +47,19 @@ Add to the end of file and save file
 
 Now, reboot using `sudo reboot`. After restart, the HA web page should appear.
 
-NOTE: You may need to type credentials into RPI. To do so, connect external keyboard.
+After RPi rebooted, you may have to enter credentials. There are two ways to achive it, either connect keyboard adn type it in, or use script bellow:
+First, use touch screen to focus chromium browser.
+```bash
+sudo apt install xdotool
+export DISPLAY=:0
+// Now select username input
+xdotool type "your_username"
+// your_username should appear in text input
+// then focus password
+xdotool type "your_password"
+// make sure to check Keep me logged in
+// use login button
+```
 
 ## Voice assist
 Follow [guide](https://github.com/rhasspy/wyoming-satellite/blob/master/docs/tutorial_2mic.md). My suggestion for services config:
